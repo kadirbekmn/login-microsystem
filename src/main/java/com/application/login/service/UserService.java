@@ -16,7 +16,7 @@ public class UserService {
         if (userRepository.findByUsername(user.getUsername()) != null) {
             throw new IllegalArgumentException("Bu kullanıcı adı zaten kullanılıyor.");
         }
-        if (userRepository.findByUsername(user.getMail()) != null) {
+        if (userRepository.findByUsername   (user.getMail()) != null) {
             throw new IllegalArgumentException("Bu mail adresi zaten kullanılıyor.");
         }
         if (userRepository.findByUsername(user.getPhone()) != null) {
