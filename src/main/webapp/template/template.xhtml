@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta charset="UTF-8" />
+    <title><ui:insert name="title">Başlık</ui:insert></title>
+
+    <!-- Global Styles and Scripts -->
+    <h:outputScript library="javax.faces" name="jsf.js" />
+    <h:outputScript library="default" name="scripts/abs.js" target="head"/>
+    <h:outputScript library="default" name="scripts/login.css" target="head"/>
+</h:head>
+
+<h:body>
+    <ui:insert name="content">İçerik</ui:insert>
+</h:body>
+</html>

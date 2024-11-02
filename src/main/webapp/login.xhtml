@@ -1,0 +1,46 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        template="/src/main/webapp/template/template.xhtml">
+
+    <ui:define name="title">Giriş Yap</ui:define>
+
+    <ui:define name="content">
+        <h:form id="form">
+            <p:panel header="Giriş Yap" styleClass="login-container">
+                <p:messages id="loginMessages" autoUpdate="true" closable="true"/>
+                <p:inputText id="username" value="#{authBean.username}" placeholder="Kullanıcı Adı" required="true" label="Kullanıcı Adı"/>
+                <p:password id="password" value="#{authBean.password}" placeholder="Şifre" required="true" label="Şifre"/>
+                <p:commandButton value="Giriş Yap" action="#{authBean.login}" update="loginMessages" styleClass="ui-button-success"/>
+                <h:outputText value="Kayıt Ol" styleClass="register-link" onclick="openRegisterDialog()"/>
+            </p:panel>
+
+            <!-- Kayıt Ol Dialog -->
+            <p:dialog header="Kayıt Ol" widgetVar="registerDialog" modal="true" closable="true" resizable="false" width="400">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="newName" value="Ad"/>
+                    <p:inputText id="newName" value="#{authBean.newName}" required="true"/>
+
+                    <p:outputLabel for="newSurname" value="Soyad"/>
+                    <p:inputText id="newSurname" value="#{authBean.newSurname}" required="true"/>
+
+                    <p:outputLabel for="newMail" value="Mail Adresi"/>
+                    <p:inputText id="newMail" value="#{authBean.newMail}" required="true"/>
+
+                    <p:outputLabel for="newPhone" value="Telefon Numarası"/>
+                    <p:inputText id="newPhone" value="#{authBean.newPhone}" required="true"/>
+
+                    <p:outputLabel for="newUsername" value="Kullanıcı Adı"/>
+                    <p:inputText id="newUsername" value="#{authBean.newUsername}" required="true"/>
+
+                    <p:outputLabel for="newPassword" value="Şifre"/>
+                    <p:password id="newPassword" value="#{authBean.newPassword}" required="true"/>
+                </h:panelGrid>
+
+                <p:commandButton value="Kayıt Ol" action="#{authBean.register}" oncomplete="PF('registerDialog').hide()" update="loginMessages" styleClass="ui-button-success"/>
+            </p:dialog>
+        </h:form>
+    </ui:define>
+</ui:composition>
