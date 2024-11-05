@@ -65,26 +65,26 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- PrimeFaces -->
+		<!-- PrimeFaces (JSF 3.x Uyumlu) -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>11.0.0</version>
 		</dependency>
 
-		<!-- Jakarta Faces (instead of javax.faces) -->
+		<!-- Jakarta Faces API -->
 		<dependency>
 			<groupId>jakarta.faces</groupId>
 			<artifactId>jakarta.faces-api</artifactId>
-			<version>3.0.0</version> <!-- Uygun sürümü kontrol edin -->
+			<version>3.0.0</version>
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- JSF Implementation -->
+		<!-- Jakarta Faces Implementation (GlassFish) -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>jakarta.faces</artifactId>
-			<version>2.3.14</version>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 
